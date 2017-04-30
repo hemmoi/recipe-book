@@ -1,3 +1,7 @@
-<app-header></app-header>
-<app-recipe-book></app-recipe-book>
-<app-shopping-list></app-shopping-list>
+<app-header (toolbarSelection)="onToolbarSelect($event)"></app-header>
+
+<app-recipe-book *ngIf="toolbarElement==='recipies'">
+</app-recipe-book>
+
+<app-shopping-list *ngIf="toolbarElement==='shopping-list'">
+</app-shopping-list>

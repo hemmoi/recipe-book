@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  toolbarElement = "recipies";
 
+
+  onToolbarSelect(feature: string) {
+    this.toolbarElement = feature;
+  }
 }
