@@ -18,7 +18,7 @@ export class RecipeService {
       ]),
     new Recipe(
       'Big Fat Burger',
-      'Fatter than your mothers ass!',
+      'Fatter than your mamas ass!',
       'https://upload.wikimedia.org/wikipedia/commons/1/11/Umami_Burger_hamburger.jpg',
       [
         new Ingredient('Buns', 2),
@@ -30,6 +30,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
