@@ -1,3 +1,5 @@
+import { AuthGuard } from './auth/auth-guard.service';
+import { HomeComponent } from './core/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -5,7 +7,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/recipe-book', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
+  { path: 'recipe-book', loadChildren: './recipe-book/recipe-book.module#RecipeBookModule' },
   { path: 'shopping-list', component: ShoppingListComponent },
 ];
 
