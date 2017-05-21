@@ -1,4 +1,3 @@
-import { AuthGuard } from './../auth/auth-guard.service';
 import { AuthService } from './../auth/auth.service';
 import { DataStorageService } from './../shared/data-storage.service';
 import { RecipeService } from './../recipe-book/recipe.service';
@@ -27,7 +26,6 @@ import { NgModule } from '@angular/core';
         RecipeService, 
         DataStorageService, 
         AuthService, 
-        AuthGuard
     ],
 
 })
