@@ -17,6 +17,7 @@ export class AuthService {
                 error => console.log(error)
             );
     }
+
     signinUser(email: string, password: string) {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(
@@ -36,6 +37,7 @@ export class AuthService {
     logout() {
         firebase.auth().signOut();
         this.token = null;
+        this.router.navigate(['/']);
     }
 
     getToken() {

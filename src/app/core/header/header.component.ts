@@ -12,7 +12,7 @@ export class HeaderComponent {
   constructor(private dataStorageService: DataStorageService,
               private authService: AuthService) {}
     
-  onSaveData() {
+/*  onSaveData() {
     this.dataStorageService.storeRecipes().subscribe(
       (response: Response) => {
         console.log(response);
@@ -22,7 +22,7 @@ export class HeaderComponent {
     
   onFetchData() {
       this.dataStorageService.getRecipes();
-    }
+    }*/
 
   onLogout () {
     this.authService.logout();

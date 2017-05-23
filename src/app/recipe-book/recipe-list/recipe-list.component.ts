@@ -1,3 +1,4 @@
+import { DataStorageService } from './../../shared/data-storage.service';
 import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Recipe } from '../recipe.model';
@@ -17,15 +18,19 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   constructor(private recipeService: RecipeService,
               private router: Router,
               private route: ActivatedRoute,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
     this.subscription = this.recipeService.recipesChanged.subscribe(
       (recipes: Recipe[]) => {
-        this.recipes = recipes
+        this.recipes = recipes;
       }
     );
     this.recipes = this.recipeService.getRecipes();
+    if (this.authService.isAuthenticated()) {
+      this.dataStorageService.getRecipes();
+    }
   }
 
   onNewRecipe() {
