@@ -11,7 +11,11 @@ export class AuthService {
     signupUser(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(
-                response => console.log(response)
+                response => {
+                    alert("New account created!");
+                    this.signinUser(email, password);
+                    console.log(response);
+                }
             )
             .catch(
                 error => console.log(error)
