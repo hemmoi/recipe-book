@@ -7,11 +7,13 @@ import { SharedModule } from './../shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     declarations: [
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        FooterComponent
     ],
     imports: [
         SharedModule,
@@ -19,7 +21,8 @@ import { NgModule } from '@angular/core';
     ],
     exports: [
         AppRoutingModule,
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent
     ],
     providers: [
         ShoppingListService, 
