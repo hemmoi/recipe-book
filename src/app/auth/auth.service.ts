@@ -12,13 +12,12 @@ export class AuthService {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(
                 response => {
-                    alert("New account created!");
+                    alert('New account created!');
                     this.signinUser(email, password);
-                    console.log(response);
                 }
             )
-            .catch(
-                error => console.log(error)
+            .catch(            
+                error => alert(error.message)
             );
     }
 
@@ -34,7 +33,7 @@ export class AuthService {
                 }
             )
             .catch(
-                error => console.log(error)
+                error => alert(error.message)
             );
     }
 
